@@ -25,7 +25,7 @@ function hello_shortcode( $atts, $content = NULL )
 {
     $atts = shortcode_atts( array(
         'message' => 'Hello',
-    ), $atts, 'hello_shortcode' );
+    ), $atts );
 
     ob_start();
     echo "<strong>";
