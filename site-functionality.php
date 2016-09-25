@@ -34,4 +34,9 @@ require_once( dirname( __FILE__ ) . '/includes/3rd-party/class-tgm-plugin-activa
 require_once( dirname( __FILE__ ) . '/includes/functions.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-jetpack.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-required-plugins.php' );
-require_once( dirname( __FILE__ ) . '/includes/functions-shortcodes.php' );
+
+/* Add Shortcodes
+------------------------------------------------------- */
+add_action( 'init', function () {
+    require_once( dirname( __FILE__ ) . '/includes/shortcode-hello.php' );
+} );

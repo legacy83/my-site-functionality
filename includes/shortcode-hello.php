@@ -7,22 +7,10 @@
  */
 namespace My\Site\Functionality;
 
-/* Add Shortcodes
+/* Add Shortcode
 ------------------------------------------------------- */
-add_action( 'init', function () {
-    add_shortcode( 'hello', __NAMESPACE__ . '\hello_shortcode' );
-} );
+add_shortcode( 'hello', function ( $atts, $content = NULL ) {
 
-/**
- * Hello Shortcode.
- *
- * @param array $atts
- * @param null  $content
- *
- * @return string
- */
-function hello_shortcode( $atts, $content = NULL )
-{
     $atts = shortcode_atts( array(
         'message' => 'Hello',
     ), $atts );
@@ -34,4 +22,5 @@ function hello_shortcode( $atts, $content = NULL )
     $display = ob_get_clean();
 
     return do_shortcode( $display );
-}
+
+} );
