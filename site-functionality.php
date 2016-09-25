@@ -32,11 +32,5 @@ if ( My_Site_Functionality_Back_Compat::unsafe() ) {
 ------------------------------------------------------- */
 require_once( dirname( __FILE__ ) . '/includes/3rd-party/class-tgm-plugin-activation.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions.php' );
-require_once( dirname( __FILE__ ) . '/includes/functions-jetpack.php' );
-require_once( dirname( __FILE__ ) . '/includes/functions-required-plugins.php' );
-
-/* Add Shortcodes
-------------------------------------------------------- */
-add_action( 'init', function () {
-    require_once( dirname( __FILE__ ) . '/includes/shortcode-hello.php' );
-} );
+require_once( dirname( __FILE__ ) . '/includes/functions-recommended-plugins.php' );
+require_once( dirname( __FILE__ ) . '/includes/shortcode-hello.php' );
