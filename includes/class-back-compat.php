@@ -8,7 +8,6 @@
 
 /**
  * Class My_Site_Functionality_Back_Compat
- *
  */
 final class My_Site_Functionality_Back_Compat
 {

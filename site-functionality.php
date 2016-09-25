@@ -6,6 +6,8 @@
  * Author: Thiago Senna
  * Author URI: http://thremes.com.br
  *
+ * Version: 0.1.0
+ *
  * @package   My\Site\Functionality
  * @author    Thiago Senna <thiago@thremes.com.br>
  * @copyright Copyright (c) 2016, Thiago Senna
@@ -18,7 +20,7 @@ define( 'MY_SITE_FUNCTIONALITY_URI', trailingslashit( plugin_dir_url( __FILE__ )
 define( 'MY_SITE_FUNCTIONALITY_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 define( 'MY_SITE_FUNCTIONALITY_FILE', __FILE__ );
 define( 'MY_SITE_FUNCTIONALITY_PLUGIN', plugin_basename( __FILE__ ) );
-define( 'MY_SITE_FUNCTIONALITY_VERSION', strtotime( 'now' ) );
+define( 'MY_SITE_FUNCTIONALITY_VERSION', '0.1.0' );
 
 /* Back Compatibility
 ------------------------------------------------------- */
