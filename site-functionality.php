@@ -21,7 +21,7 @@ $minimal_requirements = $minimal_requirements && version_compare( $GLOBALS[ 'wp_
 /* Gracefully Fail
 ------------------------------------------------------- */
 if ( !$minimal_requirements ) {
-    add_action( 'admin_notices', create_function( '', "echo '<div class=\"error\"><p>" . __( 'Plugin Name requires PHP 5.3 to function properly. Please upgrade PHP or deactivate Plugin Name.', 'plugin-name' ) . "</p></div>';" ) );
+    require_once( dirname( __FILE__ ) . '/includes/functions-back-compat.php' );
     return;
 }
 
