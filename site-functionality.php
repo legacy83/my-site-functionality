@@ -20,38 +20,18 @@ define( 'MY_SITE_FUNCTIONALITY_FILE', __FILE__ );
 define( 'MY_SITE_FUNCTIONALITY_PLUGIN', plugin_basename( __FILE__ ) );
 define( 'MY_SITE_FUNCTIONALITY_VERSION', strtotime( 'now' ) );
 
-///* Minimal Requirements
-//------------------------------------------------------- */
-//$minimal_requirements = TRUE;
-//$minimal_requirements = $minimal_requirements && version_compare( PHP_VERSION, '5.6', '>=' );
-//$minimal_requirements = $minimal_requirements && version_compare( $GLOBALS[ 'wp_version' ], '4.6', '>=' );
-
-/* Gracefully Fail
+/* Back Compatibility
 ------------------------------------------------------- */
 require_once( dirname( __FILE__ ) . '/includes/class-back-compat.php' );
-$back_compat = new My_Site_Functionality_Back_Compat();
-if ( !$back_compat->is_minimal_requirements_safe() ) {
-    add_action( 'admin_init', array( $back_compat, 'deactivate_plugin' ) );
-    add_action( 'admin_notices', array( $back_compat, 'hide_activated_notice' ) );
-    add_action( 'admin_notices', array( $back_compat, 'show_not_activated_notice' ) );
+if ( !My_Site_Functionality_Back_Compat::is_minimal_requirements_safe() ) {
+    My_Site_Functionality_Back_Compat::fails_gracefully();
     return;
 }
 
-//if ( !$minimal_requirements ) {
-//    require_once( dirname( __FILE__ ) . '/includes/class-back-compat.php' );
-//    $back_compat = new My_Site_Functionality_Back_Compat();
-//    add_action( 'admin_init', array( $back_compat, 'deactivate_plugin' ) );
-//    add_action( 'admin_notices', array( $back_compat, 'hide_activated_notice' ) );
-//    add_action( 'admin_notices', array( $back_compat, 'show_not_activated_notice' ) );
-//    return;
-//}
-
 /* Load Plugin Files
 ------------------------------------------------------- */
-if ( $minimal_requirements ) {
-    require_once( dirname( __FILE__ ) . '/3rd-party/class-tgm-plugin-activation.php' );
-    require_once( dirname( __FILE__ ) . '/includes/functions.php' );
-    require_once( dirname( __FILE__ ) . '/includes/functions-jetpack.php' );
-    require_once( dirname( __FILE__ ) . '/includes/functions-required-plugins.php' );
-    require_once( dirname( __FILE__ ) . '/includes/functions-shortcodes.php' );
-}
+require_once( dirname( __FILE__ ) . '/3rd-party/class-tgm-plugin-activation.php' );
+require_once( dirname( __FILE__ ) . '/includes/functions.php' );
+require_once( dirname( __FILE__ ) . '/includes/functions-jetpack.php' );
+require_once( dirname( __FILE__ ) . '/includes/functions-required-plugins.php' );
+require_once( dirname( __FILE__ ) . '/includes/functions-shortcodes.php' );

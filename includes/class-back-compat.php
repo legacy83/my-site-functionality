@@ -13,6 +13,14 @@
 class My_Site_Functionality_Back_Compat
 {
     /**
+     * The constructor.
+     */
+    private function __construct()
+    {
+        // ...
+    }
+
+    /**
      * Deactivate the functionality plugin.
      */
     public function deactivate_plugin()
@@ -33,7 +41,7 @@ class My_Site_Functionality_Back_Compat
     }
 
     /**
-     * Display reasons why plugin could not be activated.
+     * Let the user know the plugin could not be activated.
      */
     public function show_not_activated_notice()
     {
@@ -42,15 +50,27 @@ class My_Site_Functionality_Back_Compat
     }
 
     /**
-     * Check minimal requirements and return if it's safe.
+     * Check minimal requirements and returns if it's safe to continue
+     * with the plugin loading.
      *
      * @return bool
      */
-    public function is_minimal_requirements_safe()
+    public static function is_minimal_requirements_safe()
     {
-        $minimal_requirements = TRUE;
-        $minimal_requirements = $minimal_requirements && version_compare( PHP_VERSION, '5.6', '>=' );
-        $minimal_requirements = $minimal_requirements && version_compare( $GLOBALS[ 'wp_version' ], '4.6', '>=' );
-        return $minimal_requirements;
+        $requirements = TRUE;
+        $requirements = $requirements && version_compare( PHP_VERSION, '5.5', '>=' );
+        $requirements = $requirements && version_compare( $GLOBALS[ 'wp_version' ], '4.6', '>=' );
+        return $requirements;
+    }
+
+    /**
+     * Make the plugin fails gracefully.
+     */
+    public static function fails_gracefully()
+    {
+        $back_compat = new self();
+        add_action( 'admin_init', array( $back_compat, 'deactivate_plugin' ) );
+        add_action( 'admin_notices', array( $back_compat, 'hide_activated_notice' ) );
+        add_action( 'admin_notices', array( $back_compat, 'show_not_activated_notice' ) );
     }
 }
