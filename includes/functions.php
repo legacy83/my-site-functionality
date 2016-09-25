@@ -23,10 +23,3 @@ add_action( 'plugins_loaded', function () {
     add_filter( 'comments_open', '__return_false' );
     add_filter( 'pings_open', '__return_false' );
 } );
-
-/* Jetpack Developer Friendly by default
-------------------------------------------------------- */
-add_action( 'plugins_loaded', function () {
-    defined( 'JETPACK_DEV_DEBUG' ) or define( 'JETPACK_DEV_DEBUG', TRUE );
-    add_filter( 'jetpack_get_default_modules', '__return_empty_array', 99 );
-} );
