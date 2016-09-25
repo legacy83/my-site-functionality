@@ -5,12 +5,12 @@
  * @copyright  Copyright (c) 2016, Thiago Senna
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-namespace My\Site\Functionality\Shortcode;
+namespace My\Site\Functionality;
 
-/* Add Shortcode
+/* Add Shortcodes
 ------------------------------------------------------- */
 add_action( 'init', function () {
-    add_shortcode( 'hello', __NAMESPACE__ . '\hello' );
+    add_shortcode( 'hello', __NAMESPACE__ . '\shortcode_hello' );
 } );
 
 /**
@@ -21,7 +21,7 @@ add_action( 'init', function () {
  *
  * @return mixed
  */
-function hello( $atts, $content = NULL )
+function shortcode_hello( $atts, $content = NULL )
 {
     $atts = shortcode_atts( array(
         'message' => 'Hello',
