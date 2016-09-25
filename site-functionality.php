@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2016, Thiago Senna
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-require_once( dirname( __FILE__ ) . '/includes/third/class-tgm-plugin-activation.php' );
+require_once( dirname( __FILE__ ) . '/3rd-party/class-tgm-plugin-activation.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-jetpack.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-required-plugins.php' );
