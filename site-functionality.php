@@ -12,10 +12,18 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+/* Constants
+------------------------------------------------------- */
+define( 'MY_SITE_FUNCTIONALITY_URI', trailingslashit( plugin_dir_url( __FILE__ ) ) );
+define( 'MY_SITE_FUNCTIONALITY_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+define( 'MY_SITE_FUNCTIONALITY_FILE', __FILE__ );
+define( 'MY_SITE_FUNCTIONALITY_PLUGIN', plugin_basename( __FILE__ ) );
+define( 'MY_SITE_FUNCTIONALITY_VERSION', strtotime( 'now' ) );
+
 /* Minimal Requirements
 ------------------------------------------------------- */
 $minimal_requirements = TRUE;
-$minimal_requirements = $minimal_requirements && version_compare( PHP_VERSION, '5.5', '>=' );
+$minimal_requirements = $minimal_requirements && version_compare( PHP_VERSION, '5.6', '>=' );
 $minimal_requirements = $minimal_requirements && version_compare( $GLOBALS[ 'wp_version' ], '4.6', '>=' );
 
 /* Gracefully Fail
