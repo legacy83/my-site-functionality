@@ -7,7 +7,7 @@
  */
 namespace My\Site\Functionality;
 
-/* Register the Recommended Plugins
+/* Recommended Plugins
 ------------------------------------------------------- */
 add_action( 'tgmpa_register', function () {
     tgmpa( array(

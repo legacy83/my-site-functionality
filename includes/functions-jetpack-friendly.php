@@ -7,7 +7,7 @@
  */
 namespace My\Site\Functionality;
 
-/* Makes Jetpack Developer Friendly by default
+/* Jetpack Developer Friendly by default
 ------------------------------------------------------- */
 add_action( 'plugins_loaded', function () {
     defined( 'JETPACK_DEV_DEBUG' ) or define( 'JETPACK_DEV_DEBUG', TRUE );
