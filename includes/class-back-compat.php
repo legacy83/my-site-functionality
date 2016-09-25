@@ -40,4 +40,17 @@ class My_Site_Functionality_Back_Compat
         $message = __( 'Plugin <strong>not activated</strong>. Minimal requirements for the plugin has not been satisfied.' );
         printf( '<div class="error"><p>%s</p></div>', $message );
     }
+
+    /**
+     * Check minimal requirements and return if it's safe.
+     *
+     * @return bool
+     */
+    public function is_minimal_requirements_safe()
+    {
+        $minimal_requirements = TRUE;
+        $minimal_requirements = $minimal_requirements && version_compare( PHP_VERSION, '5.6', '>=' );
+        $minimal_requirements = $minimal_requirements && version_compare( $GLOBALS[ 'wp_version' ], '4.6', '>=' );
+        return $minimal_requirements;
+    }
 }
