@@ -7,12 +7,9 @@
  */
 namespace My\Site\Functionality;
 
-/* Disallow File Changes
+/* Closed Comments and Pings
 ------------------------------------------------------- */
 add_action( 'plugins_loaded', function () {
-    if ( !function_exists( 'pluginception_create_plugin' ) ) {
-        defined( 'DISALLOW_FILE_EDIT' ) or define( 'DISALLOW_FILE_EDIT', TRUE );
-        defined( 'DISALLOW_FILE_MODS' ) or define( 'DISALLOW_FILE_MODS', TRUE );
-        defined( 'AUTOMATIC_UPDATER_DISABLED' ) or define( 'AUTOMATIC_UPDATER_DISABLED', TRUE );
-    }
+    add_filter( 'comments_open', '__return_false' );
+    add_filter( 'pings_open', '__return_false' );
 } );

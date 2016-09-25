@@ -32,6 +32,7 @@ if ( My_Site_Functionality_Back_Compat::unsafe() ) {
 ------------------------------------------------------- */
 require_once( dirname( __FILE__ ) . '/includes/3rd-party/class-tgm-plugin-activation.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions.php' );
+require_once( dirname( __FILE__ ) . '/includes/functions-closed-comments.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-jetpack-friendly.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-recommended-plugins.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-shortcodes.php' );
