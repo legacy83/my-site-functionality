@@ -25,7 +25,7 @@ final class My_Site_Functionality_Back_Compat
     public function deactivate_plugin()
     {
         if ( defined( 'MY_SITE_FUNCTIONALITY_PLUGIN' ) && MY_SITE_FUNCTIONALITY_PLUGIN ) {
-            deactivate_plugins( MY_SITE_FUNCTIONALITY_PLUGIN );
+            deactivate_plugins( array( MY_SITE_FUNCTIONALITY_PLUGIN ) );
         }
     }
 
