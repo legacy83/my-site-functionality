@@ -39,3 +39,4 @@ require_once( dirname( __FILE__ ) . '/includes/functions-disallow-site-changes.p
 require_once( dirname( __FILE__ ) . '/includes/functions-jetpack-friendly.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-recommended-plugins.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-shortcodes.php' );
+require_once( dirname( __FILE__ ) . '/includes/functions-theme-extensions.php' );
