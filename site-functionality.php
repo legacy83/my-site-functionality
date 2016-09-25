@@ -23,7 +23,7 @@ define( 'MY_SITE_FUNCTIONALITY_VERSION', strtotime( 'now' ) );
 /* Back Compatibility
 ------------------------------------------------------- */
 require_once( dirname( __FILE__ ) . '/includes/class-back-compat.php' );
-if ( !My_Site_Functionality_Back_Compat::is_minimal_requirements_safe() ) {
+if ( My_Site_Functionality_Back_Compat::unsafe() ) {
     My_Site_Functionality_Back_Compat::fails_gracefully();
     return;
 }

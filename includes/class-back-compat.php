@@ -10,7 +10,7 @@
  * Class My_Site_Functionality_Back_Compat
  *
  */
-class My_Site_Functionality_Back_Compat
+final class My_Site_Functionality_Back_Compat
 {
     /**
      * The constructor.
@@ -55,12 +55,23 @@ class My_Site_Functionality_Back_Compat
      *
      * @return bool
      */
-    public static function is_minimal_requirements_safe()
+    public static function safe()
     {
         $requirements = TRUE;
         $requirements = $requirements && version_compare( PHP_VERSION, '5.5', '>=' );
         $requirements = $requirements && version_compare( $GLOBALS[ 'wp_version' ], '4.6', '>=' );
         return $requirements;
+    }
+
+    /**
+     * Check minimal requirements and returns if it's unsafe to continue
+     * with the plugin loading.
+     *
+     * @return bool
+     */
+    public static function unsafe()
+    {
+        return !self::safe();
     }
 
     /**
