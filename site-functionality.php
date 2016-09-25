@@ -30,7 +30,7 @@ if ( My_Site_Functionality_Back_Compat::unsafe() ) {
 
 /* Load Plugin Files
 ------------------------------------------------------- */
-require_once( dirname( __FILE__ ) . '/3rd-party/class-tgm-plugin-activation.php' );
+require_once( dirname( __FILE__ ) . '/includes/3rd-party/class-tgm-plugin-activation.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-jetpack.php' );
 require_once( dirname( __FILE__ ) . '/includes/functions-required-plugins.php' );
